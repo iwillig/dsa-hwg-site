@@ -11,14 +11,34 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+
+        <ul>
+          <li>Our Work</li>
+          <li>Resources</li>
+          <li>About</li>
+          <li>Media</li>
+          <li>Contact</li>
+        </ul>
+
+        <ul>
+          <li>Facebook</li>
+          <li>Instagram</li>
+          <li>Twitter</li>
+        </ul>
+
         <h1 className={styles.title}>
           NYC DSA Healthcare Working Group
         </h1>
 
+        <h2>Upcoming Events</h2>
+
+
       </main>
 
       <footer className={styles.footer}>
+
       </footer>
+
     </div>
 
 
