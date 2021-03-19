@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { SocialIcon } from 'react-social-icons';
 
 export default function Home() {
 
@@ -21,9 +22,8 @@ export default function Home() {
         </ul>
 
         <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
-          <li>Twitter</li>
+          <SocialIcon url="https://twitter.com/nycdsa_health" />
+          <SocialIcon url="https://www.facebook.com/nycdsahealthcarewg" />
         </ul>
 
         <h1 className={styles.title}>
