@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { SocialIcon } from 'react-social-icons';
-import { css, cx } from '@emotion/css'
 import Link from 'next/link'
 import React from "react";
 
@@ -45,7 +44,7 @@ const NavLinks = [
   },
   {
     href: "/contact",
-    name: "Concat"
+    name: "Contact"
   }
 ];
 
@@ -111,7 +110,7 @@ const Footer = () => {
   );
 }
 
-const SplashScreen = () => {
+const SplashScreen = (props) => {
   return (
     <h1 className={styles.title}>
       NYC DSA Healthcare Working Group
@@ -153,7 +152,8 @@ class SignupForm extends React.Component {
         <input type="text" value="" onChange={this.handleChange} />
       </label>
       <input type="submit" value="Submit" />
-    </form> )
+    </form>
+    )
   }
 }
 
