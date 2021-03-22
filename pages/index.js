@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { SocialIcon } from 'react-social-icons';
 import Link from 'next/link'
 import React from "react";
+import { useForm } from "react-hook-form";
 
 // Source Events from action work
 
@@ -51,7 +52,26 @@ const NavLinks = [
 const renderInformation = {
   signUpData: {
     title: "Signup for our newsletter",
-    description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus, nec blandit arcu nibh sed arcu. Maecenas nunc nulla, pharetra eget fermentum in, fermentum gravida turpis"
+    description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus, nec blandit arcu nibh sed arcu. Maecenas nunc nulla, pharetra eget fermentum in, fermentum gravida turpis",
+    formFields: [
+      {
+        htmlName: "firstName",
+        displayName: "First name",
+        hookFormArgs: { required: true }
+      },
+      {
+        htmlName: "lastName",
+        displayName: "Last Name"
+      },
+      {
+        htmlName: "emailAddress",
+        displayName: "Email Address"
+      },
+      {
+        htmlName: "zipCode",
+        displayName: "Zip Code"
+      }
+    ]
   },
 
   copyRightData: {
@@ -81,7 +101,7 @@ const NavMenu = () => {
 
 const FooterNavMenu = () => {
   return (
-    <div>
+    <>
       <ul>
         {NavLinks.map((x) => {
           <li key={x.href}>
@@ -89,7 +109,7 @@ const FooterNavMenu = () => {
           </li>
         })}
       </ul>
-    </div>
+    </>
   )
 }
 
@@ -103,58 +123,49 @@ const CopyRight = () => {
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <FooterNavMenu/>
       <CopyRight/>
-    </div>
+    </>
   );
 }
 
 const SplashScreen = (props) => {
   return (
-    <h1 className={styles.title}>
-      NYC DSA Healthcare Working Group
-    </h1>
+    <>
+      <h1 className={styles.title}>
+        NYC DSA Healthcare Working Group
+      </h1>
+    </>
   );
 }
 
-class SignupForm extends React.Component {
-  constructor(props) {
-    super(props);
+const SignupForm = () => {
+  const { register, handleSubmit, watch, errors } = useForm();
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  const onSubmit = (data) => {
+    console.log(data);
+    console.log(errors);
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-  render() {
-    return (<form onSubmit={this.handleSubmit}>
-      <label>
-        First Name
-        <input type="text" value="" onChange={this.handleChange} />
-      </label>
-      <label>
-        Last Name
-        <input type="text" value="" onChange={this.handleChange} />
-      </label>
-      <label>
-        Email Address
-        <input type="text" value="" onChange={this.handleChange} />
-      </label>
-      <label>
-        Zip Code
-        <input type="text" value="" onChange={this.handleChange} />
-      </label>
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      {renderInformation.signUpData.formFields.map(x =>
+        <>
+        <label key={x.htmlName}>
+          {x.displayName}
+          <input name={x.htmlName}
+                 type="text"
+                 ref={register(x.hookFormArgs)}/>
+        </label>
+        <p key={`error-${x.htmlName}`}>
+          error {errors[x.htmlName]}
+        </p>
+        </>
+      )}
       <input type="submit" value="Submit" />
     </form>
-    )
-  }
+  )
 }
 
 const Signup = () => {
