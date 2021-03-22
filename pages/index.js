@@ -37,7 +37,7 @@ const NavLinks = [
   },
   {
     href: "/resources",
-    name: "Ressources"
+    name: "Resources"
   },
   {
     href: "/media",
