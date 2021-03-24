@@ -158,9 +158,6 @@ const SignupForm = () => {
                  type="text"
                  ref={register(x.hookFormArgs)}/>
         </label>
-        <p key={`error-${x.htmlName}`}>
-          error {errors[x.htmlName]}
-        </p>
         </>
       )}
       <input type="submit" value="Submit" />
