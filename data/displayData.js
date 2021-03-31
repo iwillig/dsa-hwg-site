@@ -25,24 +25,51 @@ export const Events = [
 
 export const NavLinks = [
   {
-    href: "/our-work",
-    name: "Our Work"
+    href: "/",
+    displayName: "Home"
   },
   {
-    href: "/resources",
-    name: "Resources"
+    href: "/about",
+    displayName: "About"
   },
+  {
+    href: "/our-work",
+    displayName: "Our Work"
+  },
+  /*{
+    href: "/resources",
+    displayName: "Resources"
+  },*/
   {
     href: "/media",
-    name: "Media"
+    displayName: "Media"
   },
   {
     href: "/contact",
-    name: "Contact"
+    displayName: "Contact"
   }
 ];
 
 export const renderInformation = {
+
+  ourWorkPage: {
+    description: "",
+    onGoingCampaigns: [{title: "", description: ""}],
+    pastCampaigns: [{title: "", description: ""}]
+  },
+
+  aboutPage: {
+    description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus",
+    ourHistory: {
+      title: "",
+      description: ""
+    },
+    ourValues: [{}],
+    ourGoals: [
+      {displayName: "Pass the NYHA"},
+      {displayName: ""}]
+  },
+
   signUpData: {
     title: "Signup for our newsletter",
     description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus, nec blandit arcu nibh sed arcu. Maecenas nunc nulla, pharetra eget fermentum in, fermentum gravida turpis",

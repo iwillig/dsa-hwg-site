@@ -4,8 +4,8 @@ import React from "react";
 const SocialMedia = () => {
   return (
     <ul>
-      <SocialIcon url="https://twitter.com/nycdsa_health" />
-      <SocialIcon url="https://www.facebook.com/nycdsahealthcarewg" />
+      <li><SocialIcon url="https://twitter.com/nycdsa_health" /></li>
+      <li><SocialIcon url="https://www.facebook.com/nycdsahealthcarewg" /></li>
     </ul>
   );
 }
