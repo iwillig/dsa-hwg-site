@@ -8,7 +8,7 @@ const NavMenu = () => {
       <ul>
         {NavLinks.map((x) =>
           <li key={x.href}>
-            <Link href={x.href}><a>{x.name}</a></Link>
+            <Link href={x.href}><a>{x.displayName}</a></Link>
           </li>
         )}
       </ul>
