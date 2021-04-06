@@ -3,9 +3,12 @@ import React from "react";
 import Event from "./event";
 
 const EventsList = () => {
-  return (<ul>
+
+
+  return (<ul className = "mt-8">
     {Events.map((x) => (
-      <Event key={JSON.stringify(x)} event={x}/>
+      <Event 
+      key={JSON.stringify(x)} event={x}/>
     ))}
   </ul>);
 }

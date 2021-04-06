@@ -3,7 +3,7 @@ import React from "react";
 
 const CopyRight = () => {
   return (
-    <div>
+    <div className ="flex">
       <p>{renderInformation.copyRightData.description}</p>
     </div>
   )

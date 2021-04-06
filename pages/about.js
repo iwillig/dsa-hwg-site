@@ -20,9 +20,12 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <nav>
         <NavMenu />
         <SocialMedia />
+      </nav>
+
+      <main>
         <SplashScreen />
         <AboutInfo description={renderInformation.aboutPage.description}/>
         <AboutDSA />

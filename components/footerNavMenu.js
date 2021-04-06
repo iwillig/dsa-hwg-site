@@ -5,7 +5,7 @@ import React from "react";
 const FooterNavMenu = () => {
   return (
     <>
-      <ul>
+      <ul className = "">
         {NavLinks.map((x) => {
           return (<li key={x.href}>
             <Link href={x.href}><a>{x.displayName}</a></Link>

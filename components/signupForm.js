@@ -12,10 +12,10 @@ const SignupForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className = "grid grid-cols-2 grid-rows-2">
       {renderInformation.signUpData.formFields.map(x =>
         <>
-          <label key={x.htmlName}>
+          <label key={x.htmlName}  >
             {x.displayName}
             <input name={x.htmlName}
                    type="text"
