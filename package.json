@@ -17,6 +17,7 @@
         "@nivo/line": "^0.67.0",
         "@nivo/pie": "^0.67.0",
         "@nivo/scatterplot": "^0.67.0",
+        "@tailwindcss/forms": "^0.3.2",
         "@types/lodash.uniq": "^4.5.6",
         "@types/react-modal": "^3.12.0",
         "abort-controller": "^3.0.0",
