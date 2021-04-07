@@ -12,7 +12,7 @@ const SignupForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className = "grid tablet:grid-cols-1 laptop:grid-cols-2 laptop:grid-rows-2 gap-x-6 gap-y-8  ">
+    <form onSubmit={handleSubmit(onSubmit)} className = "grid tablet:grid-cols-1 laptop:grid-cols-2 laptop:grid-rows-2 gap-x-6  gap-y-8">
       {renderInformation.signUpData.formFields.map(x =>
         <>
           <label className =" " key={x.htmlName}  >
@@ -26,7 +26,7 @@ const SignupForm = () => {
         </>
       )}
       
-      <button className ="w-30 h-10 mr-auto ml-0 bg-black text-white shadow py-2 px-4 rounded-full font-bold" type="submit" value="Submit"> Submit </button>
+      <button className ="px-2 pb-3 pt-2  mr-auto ml-0 bg-black text-white shadow py-2 px-4 rounded-full font-bold" type="submit" value="Submit"> Submit </button>
       
     </form> 
   )
