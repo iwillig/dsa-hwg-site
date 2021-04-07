@@ -5,7 +5,7 @@ const SplashScreen = (props) => {
   return (
     <>
     <div className= " mt-16 mb-24 laptop:mt-32 laptop:mb-40 desktop:mt-36 desktop:mb-48 "> 
-        <div  className="mx-8 h-96 w-480 relative hidden tablet:flex">
+        <div  className="mx-8  desktop:mx-64 h-96 w-480 relative hidden tablet:flex">
           <Image
             src="/logo_1440.png"
             alt="DSA Logo"

@@ -7,8 +7,8 @@ import Image from 'next/image'
 const NavMenu = () => {
   return (
     <nav>
-      <div className = " flex items-center mx-8  mt-4 mb-4 ">
-      <ul className = "flex mr-auto ml-0  hidden tablet:flex space-x-6">
+      <div className = " flex items-center mx-8  desktop:mx-64  my-4 desktop:my-8 ">
+      <ul className = " mr-auto ml-0  hidden tablet:flex space-x-6 desktop:space-x-8">
         {NavLinks.map((x) =>
             <div className = "">
           <li key={x.href} className = "text-primary font-bold text-navbar">
@@ -18,7 +18,7 @@ const NavMenu = () => {
             </div>
         )}
       </ul>
-        <div className = " flex ml-auto mr-0 hidden tablet:flex">
+        <div className = " ml-auto mr-0 hidden tablet:flex">
           <SocialMedia />
         </div>
 

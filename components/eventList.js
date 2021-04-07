@@ -5,7 +5,7 @@ import Event from "./event";
 const EventsList = () => {
 
 
-  return (<ul className = "mt-8">
+  return (<ul className = "mt-8 ">
     {Events.map((x) => (
       <Event 
       key={JSON.stringify(x)} event={x}/>

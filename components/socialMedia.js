@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const SocialMedia = () => {
   return (
-    <ul className='inline-flex  space-x-4'>
+    <ul className='inline-flex  space-x-4 desktop:space-x-6'>
        <Link href="https://www.facebook.com/nycdsahealthcarewg">
       <div  className="">
         <Image
