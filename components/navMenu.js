@@ -11,18 +11,16 @@ const NavMenu = () => {
       <ul className = " mr-auto ml-0  hidden tablet:flex space-x-6 desktop:space-x-8">
         {NavLinks.map((x) =>
             <div className = "">
-          <li key={x.href} className = "text-primary font-bold text-navbar">
+          <li key={x.href} className = "text-primary hover:text-highlight font-bold text-navbar">
             <Link href={x.href} >
               {x.displayName}</Link>
           </li>
             </div>
         )}
       </ul>
-        <div className = " ml-auto mr-0 hidden tablet:flex">
-          <SocialMedia />
-        </div>
 
-        <div className = "flex ml-auto mr-0 tablet:hidden ">
+
+        <div className = " ml-auto mr-0 tablet:hidden ">
       <Image
           src="/menu_icon.svg"
           alt="DSA Logo"
@@ -31,6 +29,17 @@ const NavMenu = () => {
           ></Image>
         </div>
 
+        <div className ="inline-flex items-center ml-auto mr-0 hidden tablet:flex desktop:space-x-6">
+        <div>
+          <SocialMedia />
+        </div>
+
+        <div>  
+          <Link href="/donate">
+          <button class="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded-full">
+          Donate</button>
+       </Link></div>
+        </div>
       </div>
 
 

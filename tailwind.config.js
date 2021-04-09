@@ -25,7 +25,7 @@ module.exports = {
   
         'secondary': '#FBD2D4',
   
-        'tertiary': '#EC1F27',
+        'highlight': '#BC1016',
   
       },
       
