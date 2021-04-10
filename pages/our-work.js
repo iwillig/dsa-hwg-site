@@ -13,23 +13,22 @@ import React from "react";
 
 export default function OurWork() {
   return (<div>
-    <div className={styles.container}>
+    <div>
 
       <Head>
         <title>NYC DSA Healthcare Working Group</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <NavMenu />
-        <SocialMedia />
         <SplashScreen />
         <p>Our Work</p>
         <Signup />
         <DonateLink />
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <Footer/>
       </footer>
 

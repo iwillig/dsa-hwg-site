@@ -1,4 +1,3 @@
-import styles from "../styles/Home.module.css";
 import Head from "next/head";
 import NavMenu from "../components/navMenu";
 import SocialMedia from "../components/socialMedia";
@@ -13,16 +12,15 @@ import {renderInformation} from "../data/displayData";
 
 export default function About() {
   return (<div>
-    <div className={styles.container}>
+    <div>
 
       <Head>
         <title>NYC DSA Healthcare Working Group</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <NavMenu />
-        <SocialMedia />
         <SplashScreen />
         <AboutInfo description={renderInformation.aboutPage.description}/>
         <AboutDSA />
@@ -30,7 +28,7 @@ export default function About() {
         <DonateLink />
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <Footer/>
       </footer>
 
