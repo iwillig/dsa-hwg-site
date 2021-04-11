@@ -72,7 +72,7 @@ export const renderInformation = {
 
   signUpData: {
     title: "Signup for our newsletter",
-    description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus, nec blandit arcu nibh sed arcu. Maecenas nunc nulla, pharetra eget fermentum in, fermentum gravida turpis",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat venenatis placerat amet ultricies molestie et integer neque in ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat venenatis placerat amet ultricies molestie et integer neque in ipsum",
     formFields: [
       {
         htmlName: "firstName",
