@@ -64,7 +64,11 @@ export const renderInformation = {
       title: "",
       description: ""
     },
-    ourValues: [{}],
+    ourValues: [
+      {displayName: "Value 1"},
+      {displayName: "Value 2"},
+      {displayName: "Value 3"}
+    ],
     ourGoals: [
       {displayName: "Pass the NYHA"},
       {displayName: ""}]
@@ -75,19 +79,23 @@ export const renderInformation = {
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat venenatis placerat amet ultricies molestie et integer neque in ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat venenatis placerat amet ultricies molestie et integer neque in ipsum",
     formFields: [
       {
+        key: 1,
         htmlName: "firstName",
         displayName: "First name",
         hookFormArgs: { required: true }
       },
       {
+        key: 2,
         htmlName: "lastName",
         displayName: "Last Name"
       },
       {
+        key: 3,
         htmlName: "emailAddress",
         displayName: "Email Address"
       },
       {
+        key: 4,
         htmlName: "zipCode",
         displayName: "Zip Code"
       }

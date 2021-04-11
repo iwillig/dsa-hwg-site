@@ -21,14 +21,12 @@ const SignupForm = () => {
                    type="text"
                    placeholder={x.displayName}
                    ref={register(x.hookFormArgs)}/>
-                   
+
           </label>
         </>
       )}
-      
       <button className ="  mr-auto ml-0 bg-black text-white shadow py-2 px-4 rounded-full font-bold transform hover:scale-105" type="submit" value="Submit"> Submit </button>
-      
-    </form> 
+    </form>
   )
 }
 export default SignupForm;

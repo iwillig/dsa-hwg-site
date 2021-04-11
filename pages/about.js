@@ -10,6 +10,32 @@ import Footer from "../components/footer";
 import React from "react";
 import {renderInformation} from "../data/displayData";
 
+const OurHistory = () => {
+  return (<div>
+    <h3>Our History</h3>
+    <p></p>
+  </div>)
+}
+
+const Value = (props) => {
+  return (<li>
+    <div>
+      <p>{props.value.displayName}</p>
+    </div>
+  </li>)
+}
+
+const OurValues = (props) => {
+  return (<div>
+    <h3>Our Values</h3>
+    <ol>
+      {props.ourValues.map((value) => {
+        return <Value key={value.displayName} value={value} />
+      })}
+    </ol>
+  </div>)
+}
+
 export default function About() {
   return (<div>
     <div>
@@ -24,6 +50,8 @@ export default function About() {
         <SplashScreen />
         <AboutInfo description={renderInformation.aboutPage.description}/>
         <AboutDSA />
+        <OurValues ourValues={renderInformation.aboutPage.ourValues}/>
+        <OurHistory />
         <Signup />
         <DonateLink />
       </main>
