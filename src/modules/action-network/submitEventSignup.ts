@@ -1,6 +1,5 @@
-import { SignupFormData } from '../../pages/volunteer/SignupFormData';
 
-export const submitEventSignup = (signupURL: string, form: SignupFormData) => {
+export const submitEventSignup = (signupURL: string, form: any) => {
   const { firstName, lastName, email, phone } = form;
 
   const data = {
