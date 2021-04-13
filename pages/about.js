@@ -49,10 +49,6 @@ export default function About() {
         <NavMenu />
         <SplashScreen />
         <AboutInfo description={renderInformation.aboutPage.description}/>
-        <AboutDSA />
-        <OurValues ourValues={renderInformation.aboutPage.ourValues}/>
-        <OurHistory />
-        <Signup />
         <DonateLink />
       </main>
 
