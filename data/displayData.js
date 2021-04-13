@@ -101,7 +101,9 @@ export const renderInformation = {
       }
     ]
   },
-
+  donateLink: {
+    href: "https://chuffed.org/project/nyc-dsa-healthcare"
+  },
   copyRightData: {
     description: "© 2021 New York City Democractic Socialists of America Healthcare Working Group"
   }
