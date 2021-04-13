@@ -1,4 +1,4 @@
-import {Events, NavLinks, renderInformation} from "../data/displayData";
+import {NavLinks, renderInformation} from "../data/displayData";
 import Link from "next/link";
 import React from "react";
 import SocialMedia from "../components/socialMedia";
@@ -35,7 +35,7 @@ const NavMenu = () => {
         </div>
 
         <div>  
-          <Link href="/donate">
+          <Link href={renderInformation.donateLink.href}>
           <button class="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded-full ">
           Donate</button>
        </Link></div>
