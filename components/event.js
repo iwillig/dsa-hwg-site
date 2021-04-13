@@ -7,8 +7,13 @@ const Event = (props) => {
 
       <div className = "text-body"><p>{props.event.time}</p><p>{props.event.location}</p></div>
 
-      <div className = "col-span-2"><p className ="font-bold text-subheader-mobile  mt-6 tablet:mt-0 tablet:text-subheader ">{props.event.title}</p>
-      <p className = "mt-2 text-body ">{props.event.description}</p></div>
+      <div className = "col-span-2">
+        <a  href={props.event.href}
+            className ="font-bold text-subheader-mobile  cursor-pointer mt-6 tablet:mt-0 tablet:text-subheader ">
+        {props.event.title}
+        </a>
+      <p className = "mt-2 text-body ">{props.event.description}</p>
+      </div>
     </li>
   </div>);
 }
