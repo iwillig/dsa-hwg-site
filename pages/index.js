@@ -23,7 +23,6 @@ export default function Home() {
         <NavMenu />
         <SplashScreen />
         <UpComingEvents />
-        <RecentPress/>
         <Signup />
         <DonateLink />
       </main>
