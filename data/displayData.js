@@ -25,21 +25,23 @@ export const Events = [
 
 export const NavLinks = [
   {
-    href: "/",
-    displayName: "Home"
-  },
-  {
     href: "/about",
     displayName: "About"
   },
+  /*
+  {
+    href: "/",
+    displayName: "Home"
+  },
+
   {
     href: "/our-work",
     displayName: "Our Work"
   },
-  /*{
+  {
     href: "/resources",
     displayName: "Resources"
-  },*/
+  },
   {
     href: "/media",
     displayName: "Media"
@@ -48,6 +50,7 @@ export const NavLinks = [
     href: "/contact",
     displayName: "Contact"
   }
+  */
 ];
 
 export const renderInformation = {
