@@ -8,8 +8,9 @@ import UpComingEvents from "../components/upcomingEvents";
 import RecentPress from "../components/recentPress";
 import Signup from "../components/signup";
 import DonateLink from "../components/donateLink";
+import {getAllEvents} from "../src/modules/action-network/getCampaignEvents";
 
-export default function Home() {
+export default function Home(props) {
 
   return (
     <div>
@@ -22,7 +23,7 @@ export default function Home() {
       <main>
         <NavMenu />
         <SplashScreen />
-        <UpComingEvents />
+        <UpComingEvents events={props.events}/>
         <DonateLink />
       </main>
 
@@ -35,3 +36,12 @@ export default function Home() {
 
   )
 }
+
+export const getStaticProps = async () => {
+  const events = await getAllEvents();
+  return {
+    props: {
+      events: events
+    }
+  };
+};
