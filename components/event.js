@@ -13,7 +13,7 @@ const Event = (props) => {
       <div className = "text-body"><p>{props.event.location}</p></div>
 
       <div className = "col-span-2">
-        <a  href="#"
+        <a  href={props.event.browser_url}
             className ="font-bold text-subheader-mobile  cursor-pointer mt-6 tablet:mt-0 tablet:text-subheader ">
         {props.event.name}
         </a>

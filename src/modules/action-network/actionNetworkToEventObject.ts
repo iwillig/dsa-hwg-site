@@ -13,6 +13,7 @@ export const actionNetworkToEventObject = (data: ActionNetworkEvent, type: Campa
 
   return {
     id: data.identifiers[0],
+    browser_url: data.browser_url,
     description: data.description,
     name: data.title,
     date: data.start_date,
