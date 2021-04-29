@@ -39,6 +39,9 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const events = await getAllEvents();
+
+  console.log("fetching-data", events.length);
+
   return {
     props: {
       events: events
