@@ -7,12 +7,12 @@ const Event = (props) => {
 
     <li className ="grid grid-col-2 grid-row-2 tablet:grid-cols-4 tablet:gap-6 mt-2">
 
-      <p className ="text-body">{props.event.date}</p>
+      <p className ="text-body">{props.event.date.toLocaleString()}</p>
 
-      <div className = "text-body"><p>{props.event.borough}</p></div>
+      <div className = "text-body"><p>{props.event.location}</p></div>
 
       <div className = "col-span-2">
-        <a  href={props.event.signupURL}
+        <a  href="#"
             className ="font-bold text-subheader-mobile  cursor-pointer mt-6 tablet:mt-0 tablet:text-subheader ">
         {props.event.name}
         </a>

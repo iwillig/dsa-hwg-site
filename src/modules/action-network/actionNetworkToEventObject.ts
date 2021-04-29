@@ -12,6 +12,7 @@ export const actionNetworkToEventObject = (data: ActionNetworkEvent, type: Campa
     name: data.title,
     date: data.start_date,
     status: data.status,
+    location: data.location.address_lines,
     signupURL: data._links['osdi:record_attendance_helper'].href,
     type,
     borough: data.location.locality,

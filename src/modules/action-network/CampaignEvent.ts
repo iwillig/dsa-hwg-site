@@ -6,5 +6,6 @@ export interface CampaignEvent {
   status: string;
   signupURL: string;
   borough: string;
+  location: string[];
   type: 'phonebank' | 'doorhanging';
 }
