@@ -17,7 +17,7 @@ const NYHA_CAMPAIGN: Campaign = {
 };
 
 const getEventsUrl = (id: string, page: number) =>
-  `${BASE_URL}/event_campaigns/${id}/events?page=${page}`;
+  `${BASE_URL}/events?page=${page}`;
 
 const getEventsForCampaign = async (campaign: Campaign, page: number) => {
   const requestUrl = getEventsUrl(campaign.id, page);
@@ -30,6 +30,7 @@ const getEventsForCampaign = async (campaign: Campaign, page: number) => {
 
   const data = await response.json();
   const rawEvents: ActionNetworkEvent[] = data._embedded['osdi:events'];
+
   return {
     events: rawEvents.map(
       actionNetworkData => actionNetworkToEventObject(actionNetworkData, campaign.type)

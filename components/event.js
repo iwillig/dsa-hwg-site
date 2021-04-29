@@ -1,6 +1,5 @@
 import React from "react";
-import { format, parse } from 'date-fns'
-
+import { format} from 'date-fns'
 
 const Event = (props) => {
   const description={__html:props.event.description}

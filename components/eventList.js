@@ -5,8 +5,7 @@ const EventsList = (props) => {
 
   return (<ul className = "mt-8 ">
     {props.events.map((x) => (
-      <Event 
-      key={JSON.stringify(x)} event={x}/>
+      <Event key={x.id} event={x}/>
     ))}
   </ul>);
 }
