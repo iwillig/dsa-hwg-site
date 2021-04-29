@@ -1,4 +1,6 @@
 import React from "react";
+import { format, parse } from 'date-fns'
+
 
 const Event = (props) => {
   const description={__html:props.event.description}
@@ -7,7 +9,7 @@ const Event = (props) => {
 
     <li className ="grid grid-col-2 grid-row-2 tablet:grid-cols-4 tablet:gap-6 mt-2">
 
-      <p className ="text-body">{props.event.date.toLocaleString()}</p>
+      <p className ="text-body">{format(Date.parse(props.event.date), 'MM/dd/yyyy hh:mm:ss bb')}</p>
 
       <div className = "text-body"><p>{props.event.location}</p></div>
 
