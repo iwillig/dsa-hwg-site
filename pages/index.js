@@ -46,6 +46,6 @@ export const getStaticProps = async () => {
     props: {
       events: events
     },
-    revalidate: 3600
+    revalidate: 30 // reload events in seconds
   };
 };
