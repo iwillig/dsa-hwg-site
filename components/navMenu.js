@@ -8,16 +8,14 @@ const NavMenu = () => {
   return (
     <nav>
       <div className = " flex items-center mx-8  desktop:mx-64  my-4 desktop:my-8 ">
-      <ul className = " mr-auto ml-0  hidden tablet:flex space-x-6 desktop:space-x-8">
-        {NavLinks.map((x) =>
-            <div className = "">
-          <li key={x.href} className = "text-primary hover:text-highlight font-bold text-navbar">
-            <Link href={x.href} >
-              {x.displayName}</Link>
-          </li>
-            </div>
-        )}
-      </ul>
+        <ul className = " mr-auto ml-0  hidden tablet:flex space-x-6 desktop:space-x-8">
+          {NavLinks.map((x, index) =>
+              <li key={index} className = "text-primary hover:text-highlight font-bold text-navbar">
+                <Link href={x.href} >
+                  {x.displayName}</Link>
+              </li>
+          )}
+        </ul>
 
 
         <div className = " ml-auto mr-0 tablet:hidden  ">
@@ -36,9 +34,10 @@ const NavMenu = () => {
 
         <div>  
           <Link href={renderInformation.donateLink.href}>
-          <button class="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded-full ">
-          Donate</button>
-       </Link></div>
+          <button className="bg-primary hover:bg-highlight text-white font-bold py-2 px-4 rounded-full ">
+            Donate</button>
+          </Link>
+        </div>
         </div>
       </div>
 

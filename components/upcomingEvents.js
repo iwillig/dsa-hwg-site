@@ -1,7 +1,11 @@
 import React from "react";
 import EventsList from "./eventList";
+import { CampaignEvent } from '../src/modules/action-network/CampaignEvent';
+import {getAllEvents} from "../src/modules/action-network/getCampaignEvents";
 
-const UpComingEvents = () => {
+
+
+const UpComingEvents = (props) => {
   return (
     <div className ="border-0  border-t  border-black border-solid ">
       <div className = "mx-8  desktop:mx-64">
@@ -10,7 +14,7 @@ const UpComingEvents = () => {
       </h2>
       
       <div className = ""> 
-      <EventsList/>
+      <EventsList events={props.events}/>
       </div>
       </div>
     </div>
@@ -18,3 +22,4 @@ const UpComingEvents = () => {
 };
 
 export default UpComingEvents;
+

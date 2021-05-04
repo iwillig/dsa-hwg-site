@@ -11,18 +11,13 @@ interface Campaign {
   id: string;
   type: CampaignEvent['type'];
 }
-
-const FIELD_CAMPAIGN: Campaign = {
-  id: process.env.FIELD_CAMPAIGN_ID || '',
+const NYHA_CAMPAIGN: Campaign = {
+  id: process.env.NYHA_CAMPAIGN_ID || '',
   type: 'doorhanging',
-};
-const PHONE_BANK_CAMPAIGN: Campaign = {
-  id: process.env.PHONE_BANK_CAMPAIGN_ID || '',
-  type: 'phonebank',
 };
 
 const getEventsUrl = (id: string, page: number) =>
-  `${BASE_URL}/event_campaigns/${id}/events?page=${page}`;
+  `${BASE_URL}/events?page=${page}`;
 
 const getEventsForCampaign = async (campaign: Campaign, page: number) => {
   const requestUrl = getEventsUrl(campaign.id, page);
@@ -35,6 +30,7 @@ const getEventsForCampaign = async (campaign: Campaign, page: number) => {
 
   const data = await response.json();
   const rawEvents: ActionNetworkEvent[] = data._embedded['osdi:events'];
+
   return {
     events: rawEvents.map(
       actionNetworkData => actionNetworkToEventObject(actionNetworkData, campaign.type)
@@ -43,10 +39,9 @@ const getEventsForCampaign = async (campaign: Campaign, page: number) => {
   };
 }
 
-const getPhoneBankEvents = (page: number) =>
-  getEventsForCampaign(PHONE_BANK_CAMPAIGN, page);
+
 const getFieldEvents = (page: number) =>
-  getEventsForCampaign(FIELD_CAMPAIGN, page);
+  getEventsForCampaign(NYHA_CAMPAIGN, page);
 
 // Returns [2 .... totalPages - 1];
 const getNextPageNumbers = (totalPages: number) =>
@@ -56,20 +51,14 @@ const getNextPageNumbers = (totalPages: number) =>
 
 export const getAllEvents = async (): Promise<CampaignEvent[]> => {
   const firstPages = await Promise.all([
-    limit(() => getPhoneBankEvents(1)),
     limit(() => getFieldEvents(1)),
   ]);
 
   // Fetch next pages if necessary.
   const [
-    phoneBankTotalPages, fieldEventsTotalPages
+    fieldEventsTotalPages
   ] = firstPages.map(c => c.totalPages);
-  const [phoneBankNextPages, fieldEventsNextPages] = await Promise.all([
-    Promise.all(
-      getNextPageNumbers(phoneBankTotalPages).map(page =>
-        limit(() => getPhoneBankEvents(page))
-      )
-    ),
+  const [ fieldEventsNextPages] = await Promise.all([
     Promise.all(
       getNextPageNumbers(fieldEventsTotalPages).map(page =>
         limit(() => getFieldEvents(page))
@@ -79,7 +68,6 @@ export const getAllEvents = async (): Promise<CampaignEvent[]> => {
 
   const events: CampaignEvent[] = [
     ...firstPages.flatMap(c => c.events),
-    ...phoneBankNextPages.flatMap(c => c.events),
     ...fieldEventsNextPages.flatMap(c => c.events)
   ];
 
