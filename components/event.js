@@ -3,14 +3,17 @@ import { format} from 'date-fns';
 
 const Event = (props) => {
   const description={__html:props.event.description};
-  const date = new Date(props.event.date);
-  const formatDate = format(date, 'MM/dd/yyyy hh pp X');
+  // Action Network lies about their timestamps. Their API reports these date objects to be
+  // in Z (UTC) but they are actually in local time. This makes it very hard to
+  const dateWithoutZ = props.event.date.replace(/Z/, '');
+  const date = new Date(dateWithoutZ);
+  const formatDate = format(date, 'MM/dd/yyyy pp');
 
   return (<div className = " mb-10 border-t border-b-0 border-l-0 border-r-0 border-gray-200">
 
     <li className ="grid grid-col-2 grid-row-2 tablet:grid-cols-4 tablet:gap-6 mt-2">
 
-      <p className ="text-body">{props.event.date}</p>
+      <p className ="text-body font-bold">{formatDate}</p>
 
       <div className = "text-body"><p>{props.event.location}</p></div>
 
