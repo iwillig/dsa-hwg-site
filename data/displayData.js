@@ -92,6 +92,10 @@ export const NavLinks = [
     href: "/about",
     displayName: "About"
   },
+  {
+    href: "/nyha-personal-tax-estimates",
+    displayName: "New York Health Act Personal Tax Estimates"
+  },
   /*
   {
     href: "/",
