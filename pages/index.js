@@ -3,10 +3,7 @@ import React from "react";
 import NavMenu from "../components/navMenu";
 import SplashScreen from "../components/splashScreen";
 import Footer from "../components/footer";
-import SocialMedia from "../components/socialMedia";
 import UpComingEvents from "../components/upcomingEvents";
-import RecentPress from "../components/recentPress";
-import Signup from "../components/signup";
 import DonateLink from "../components/donateLink";
 import {getAllEvents} from "../src/modules/action-network/getCampaignEvents";
 
@@ -39,9 +36,6 @@ export default function Home(props) {
 
 export const getStaticProps = async () => {
   const events = await getAllEvents();
-
-  console.log("fetching-data", events.length);
-
   return {
     props: {
       events: events
