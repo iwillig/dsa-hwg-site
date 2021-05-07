@@ -8,6 +8,8 @@ export const actionNetworkToEventObject = (data: ActionNetworkEvent, type: Campa
   if (data.location) {
     if (data.location.address_lines) {
       location = data.location.address_lines[0];
+    } else {
+      location = "Virtual Event"
     }
   }
 

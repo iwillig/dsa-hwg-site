@@ -7,7 +7,8 @@ const Event = (props) => {
   // in Z (UTC) but they are actually in local time. This makes it very hard to
   const dateWithoutZ = props.event.date.replace(/Z/, '');
   const date = new Date(dateWithoutZ);
-  const formatDate = format(date, 'MM/dd/yyyy pp');
+  const formatDate = format(date, 'MMM EEE dd yyyy');
+  const timeOfEvent = format(date, 'p');
 
   return (<div className = " mb-10 border-t border-b-0 border-l-0 border-r-0 border-gray-200">
 
@@ -15,15 +16,21 @@ const Event = (props) => {
 
       <p className ="text-body font-bold">{formatDate}</p>
 
-      <div className = "text-body"><p>{props.event.location}</p></div>
+      <div className = "text-body">
+        <p>{timeOfEvent}</p>
+        <p>{props.event.location}</p>
+      </div>
 
       <div className = "col-span-2">
         <a  href={props.event.browser_url}
-            className ="font-bold text-subheader-mobile  cursor-pointer mt-6 tablet:mt-0 tablet:text-subheader ">
+            className ="font-bold text-subheader-mobile underline cursor-pointer mt-6 tablet:mt-0 tablet:text-subheader ">
         {props.event.name}
         </a>
       <div dangerouslySetInnerHTML={description} className="mt-2 text-body ">
       </div>
+        <a href={props.event.browser_url} className="font-bold underline">
+          Link to event
+        </a>
       </div>
     </li>
   </div>);

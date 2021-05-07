@@ -89,15 +89,14 @@ export const Events = [
 
 export const NavLinks = [
   {
-    href: "/about",
-    displayName: "About"
-  },
-  /*
-  {
     href: "/",
     displayName: "Home"
   },
-
+  {
+    href: "/about",
+    displayName: "About"
+  }
+/*
   {
     href: "/our-work",
     displayName: "Our Work"
@@ -126,7 +125,7 @@ export const renderInformation = {
   },
 
   aboutPage: {
-    description: "In pulvinar, magna varius bibendum cursus, lorem est rutrum lectus",
+    description: "",
     ourHistory: {
       title: "",
       description: ""
