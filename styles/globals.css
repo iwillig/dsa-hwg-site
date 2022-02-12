@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.about-paragraph {
+  margin: 2% 20%;
+}
+
+.about-paragraph > a {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+.about-paragraph > a:visited {
+  color: #800080;
+}
