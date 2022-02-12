@@ -48,7 +48,7 @@ export default function About() {
       <main>
         <NavMenu />
         <SplashScreen />
-        <AboutInfo description={renderInformation.aboutPage.description}/>
+        <AboutInfo />
         <DonateLink />
       </main>
 
